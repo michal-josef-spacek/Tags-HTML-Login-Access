@@ -156,7 +156,7 @@ __END__
 
 =head1 NAME
 
-Tags::HTML::Login::Access - Tags helper for login button.
+Tags::HTML::Login::Access - Tags helper for login access.
 
 =head1 SYNOPSIS
 

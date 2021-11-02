@@ -1,5 +1,5 @@
 NAME
-    Tags::HTML::Login::Access - Tags helper for login button.
+    Tags::HTML::Login::Access - Tags helper for login access.
 
 SYNOPSIS
      use Tags::HTML::Login::Access;
