@@ -75,8 +75,8 @@ sub _process {
 		['b', 'form'],
 		['a', 'class', 'form-login'],
 		['a', 'method', $self->{'form_method'}],
-	
-		['b', 'fieldset'],	
+
+		['b', 'fieldset'],
 		['b', 'legend'],
 		['d', $self->_text('login')],
 		['e', 'legend'],
