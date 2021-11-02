@@ -293,6 +293,8 @@ Returns undef.
 
 L<Class::Utils>,
 L<Error::Pure>,
+L<List::MoreUtils>,
+L<Readonly>,
 L<Tags::HTML>.
 
 =head1 SEE ALSO
