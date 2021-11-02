@@ -99,7 +99,7 @@ sub _process {
 		['d', $self->_text('password_label')],
 		['e', 'label'],
 		['b', 'input'],
-		['a', 'type', 'text'],
+		['a', 'type', 'password'],
 		['a', 'name', $password_id],
 		['a', 'id', $password_id],
 		['e', 'input'],
