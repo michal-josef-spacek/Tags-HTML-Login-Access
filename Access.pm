@@ -19,7 +19,7 @@ sub new {
 
 	# Create object.
 	my ($object_params_ar, $other_params_ar) = split_params(
-		['form_method', 'lang', 'link', 'title', 'text'], @params);
+		['form_method', 'lang', 'text'], @params);
 	my $self = $class->SUPER::new(@{$other_params_ar});
 
 	# Form method.
@@ -144,7 +144,6 @@ sub _text {
 
 	return $self->{'text'}->{$self->{'lang'}}->{$key};
 }
-
 
 1;
 
