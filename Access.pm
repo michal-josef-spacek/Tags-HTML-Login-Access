@@ -19,7 +19,7 @@ sub new {
 
 	# Create object.
 	my ($object_params_ar, $other_params_ar) = split_params(
-		['form_method', 'lang', 'text'], @params);
+		['form_method', 'lang', 'register_url', 'text'], @params);
 	my $self = $class->SUPER::new(@{$other_params_ar});
 
 	# Form method.
@@ -28,6 +28,9 @@ sub new {
 	# Language.
 	$self->{'lang'} = 'eng';
 
+	# Register URL.
+	$self->{'register_url'} = undef;
+
 	# Language texts.
 	$self->{'text'} = {
 		'eng' => {
@@ -35,6 +38,7 @@ sub new {
 			'password_label' => 'Password',
 			'username_label' => 'User name',
 			'submit' => 'Login',
+			'register' => 'Register',
 		},
 	};
 
@@ -113,6 +117,13 @@ sub _process {
 		['d', $self->_text('submit')],
 		['e', 'button'],
 		['e', 'p'],
+
+		defined $self->{'register_url'} ? (
+			['b', 'a'],
+			['a', 'href', $self->{'register_url'}],
+			['d', $self->_text('register')],
+			['e', 'a'],
+		) : (),
 
 		['e', 'fieldset'],
 
