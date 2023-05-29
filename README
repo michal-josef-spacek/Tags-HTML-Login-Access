@@ -109,9 +109,7 @@ EXAMPLE
 
      # Process login button.
      $obj->process_css;
-     $tags->put(['b', 'body']);
      $obj->process;
-     $tags->put(['e', 'body']);
 
      # Print out.
      print "CSS\n";
@@ -122,38 +120,76 @@ EXAMPLE
      # Output:
      # CSS
      # .form-login {
-     #         width: 300px;
+     #      width: 300px;
+     #      background-color: #f2f2f2;
+     #      padding: 20px;
+     #      border-radius: 5px;
+     #      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+     # }
+     # .form-login fieldset {
+     #      border: none;
+     #      padding: 0;
+     #      margin-bottom: 20px;
+     # }
+     # .form-login legend {
+     #      font-weight: bold;
+     #      margin-bottom: 10px;
+     # }
+     # .form-login p {
+     #      margin: 0;
+     #      padding: 10px 0;
+     # }
+     # .form-login label {
+     #      display: block;
+     #      font-weight: bold;
+     #      margin-bottom: 5px;
+     # }
+     # .form-login input[type="text"], .form-login input[type="password"] {
+     #      width: 100%;
+     #      padding: 8px;
+     #      border: 1px solid #ccc;
+     #      border-radius: 3px;
+     # }
+     # .form-login button[type="submit"] {
+     #      width: 100%;
+     #      padding: 10px;
+     #      background-color: #4CAF50;
+     #      color: #fff;
+     #      border: none;
+     #      border-radius: 3px;
+     #      cursor: pointer;
+     # }
+     # .form-login button[type="submit"]:hover {
+     #      background-color: #45a049;
      # }
      # 
      # HTML
-     # <body>
-     #   <form class="form-login" method="post">
-     #     <fieldset>
-     #       <legend>
+     # <form class="form-login" method="post">
+     #   <fieldset>
+     #     <legend>
+     #       Login
+     #     </legend>
+     #     <p>
+     #       <label for="username">
+     #       </label>
+     #       User name
+     #       <input type="text" name="username" id="username">
+     #       </input>
+     #     </p>
+     #     <p>
+     #       <label for="password">
+     #         Password
+     #       </label>
+     #       <input type="password" name="password" id="password">
+     #       </input>
+     #     </p>
+     #     <p>
+     #       <button type="submit" name="login" value="login">
      #         Login
-     #       </legend>
-     #       <p>
-     #         <label for="username">
-     #         </label>
-     #         User name
-     #         <input type="text" name="username" id="username">
-     #         </input>
-     #       </p>
-     #       <p>
-     #         <label for="password">
-     #           Password
-     #         </label>
-     #         <input type="password" name="password" id="password">
-     #         </input>
-     #       </p>
-     #       <p>
-     #         <button type="submit" name="login" value="login">
-     #           Login
-     #         </button>
-     #       </p>
-     #     </fieldset>
-     #   </form>
-     # </body>
+     #       </button>
+     #     </p>
+     #   </fieldset>
+     # </form>
 
 DEPENDENCIES
     Class::Utils, Error::Pure, List::MoreUtils, Readonly, Tags::HTML.
