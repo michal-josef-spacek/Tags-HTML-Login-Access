@@ -248,6 +248,12 @@ Returns instance of object.
 
 Default value is undef.
 
+=item * C<css_access>
+
+CSS style for access box.
+
+Default value is 'form-login'.
+
 =item * C<form_method>
 
 Form method.
@@ -256,11 +262,17 @@ Possible values are 'post' and 'get'.
 
 Default value is 'post'.
 
-=item * C<language>
+=item * C<lang>
 
 Language in ISO 639-3 code.
 
 Default value is 'eng'.
+
+=item * C<register_url>
+
+URL to registration page.
+
+Default value is undef.
 
 =item * C<tags>
 

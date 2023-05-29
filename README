@@ -22,6 +22,12 @@ METHODS
 
             Default value is undef.
 
+    *       "css_access"
+
+            CSS style for access box.
+
+            Default value is 'form-login'.
+
     *       "form_method"
 
             Form method.
@@ -30,11 +36,17 @@ METHODS
 
             Default value is 'post'.
 
-    *       "language"
+    *       "lang"
 
             Language in ISO 639-3 code.
 
             Default value is 'eng'.
+
+    *       "register_url"
+
+            URL to registration page.
+
+            Default value is undef.
 
     *       "tags"
 
