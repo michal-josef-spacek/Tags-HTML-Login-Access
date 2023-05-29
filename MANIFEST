@@ -1,6 +1,6 @@
 Access.pm
 Changes
-examples/ex1.pl
+examples/print_block_html_and_css.pl
 inc/Module/Install.pm
 inc/Module/Install/AuthorRequires.pm
 inc/Module/Install/AuthorTests.pm
