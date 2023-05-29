@@ -236,9 +236,9 @@ Default value is:
 
 =head2 C<process>
 
- $obj->process($percent_value);
+ $obj->process;
 
-Process Tags structure for gradient.
+Process Tags structure for login box.
 
 Returns undef.
 
@@ -246,7 +246,7 @@ Returns undef.
 
  $obj->process_css;
 
-Process CSS::Struct structure for output.
+Process CSS::Struct structure for login box.
 
 Returns undef.
 
