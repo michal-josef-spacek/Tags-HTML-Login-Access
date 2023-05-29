@@ -19,8 +19,11 @@ sub new {
 
 	# Create object.
 	my ($object_params_ar, $other_params_ar) = split_params(
-		['form_method', 'lang', 'register_url', 'text', 'width'], @params);
+		['css_access', 'form_method', 'lang', 'register_url', 'text', 'width'], @params);
 	my $self = $class->SUPER::new(@{$other_params_ar});
+
+	# CSS style for access box.
+	$self->{'css_access'} = 'form-login';
 
 	# Form method.
 	$self->{'form_method'} = 'post';
@@ -80,7 +83,7 @@ sub _process {
 	# Main content.
 	$self->{'tags'}->put(
 		['b', 'form'],
-		['a', 'class', 'form-login'],
+		['a', 'class', $self->{'css_access'}],
 		['a', 'method', $self->{'form_method'}],
 
 		['b', 'fieldset'],
@@ -141,7 +144,7 @@ sub _process_css {
 	my $self = shift;
 
 	$self->{'css'}->put(
-		['s', '.form-login'],
+		['s', '.'.$self->{'css_access'}],
 		['d', 'width', $self->{'width'}],
 		['d', 'background-color', '#f2f2f2'],
 		['d', 'padding', '20px'],
@@ -149,37 +152,37 @@ sub _process_css {
 		['d', 'box-shadow', '0 0 10px rgba(0, 0, 0, 0.2)'],
 		['e'],
 
-		['s', '.form-login fieldset'],
+		['s', '.'.$self->{'css_access'}.' fieldset'],
 		['d', 'border', 'none'],
 		['d', 'padding', 0],
 		['d', 'margin-bottom', '20px'],
 		['e'],
 
-		['s', '.form-login legend'],
+		['s', '.'.$self->{'css_access'}.' legend'],
 		['d', 'font-weight', 'bold'],
 		['d', 'margin-bottom', '10px'],
 		['e'],
 
-		['s', '.form-login p'],
+		['s', '.'.$self->{'css_access'}.' p'],
 		['d', 'margin', 0],
 		['d', 'padding', '10px 0'],
 		['e'],
 
-		['s', '.form-login label'],
+		['s', '.'.$self->{'css_access'}.' label'],
 		['d', 'display', 'block'],
 		['d', 'font-weight', 'bold'],
 		['d', 'margin-bottom', '5px'],
 		['e'],
 
-		['s', '.form-login input[type="text"]'],
-		['s', '.form-login input[type="password"]'],
+		['s', '.'.$self->{'css_access'}.' input[type="text"]'],
+		['s', '.'.$self->{'css_access'}.' input[type="password"]'],
 		['d', 'width', '100%'],
 		['d', 'padding', '8px'],
 		['d', 'border', '1px solid #ccc'],
 		['d', 'border-radius', '3px'],
 		['e'],
 
-		['s', '.form-login button[type="submit"]'],
+		['s', '.'.$self->{'css_access'}.' button[type="submit"]'],
 		['d', 'width', '100%'],
 		['d', 'padding', '10px'],
 		['d', 'background-color', '#4CAF50'],
@@ -189,7 +192,7 @@ sub _process_css {
 		['d', 'cursor', 'pointer'],
 		['e'],
 
-		['s', '.form-login button[type="submit"]:hover'],
+		['s', '.'.$self->{'css_access'}.' button[type="submit"]:hover'],
 		['d', 'background-color', '#45a049'],
 		['e'],
 	);
