@@ -19,7 +19,7 @@ sub new {
 
 	# Create object.
 	my ($object_params_ar, $other_params_ar) = split_params(
-		['form_method', 'lang', 'register_url', 'text'], @params);
+		['form_method', 'lang', 'register_url', 'text', 'width'], @params);
 	my $self = $class->SUPER::new(@{$other_params_ar});
 
 	# Form method.
@@ -41,6 +41,9 @@ sub new {
 			'register' => 'Register',
 		},
 	};
+
+	# Login box width.
+	$self->{'width'} = '300px';
 
 	# Process params.
 	set_params($self, @{$object_params_ar});
@@ -138,8 +141,56 @@ sub _process_css {
 	my $self = shift;
 
 	$self->{'css'}->put(
+		['s', '.form-login'],
+		['d', 'width', $self->{'width'}],
+		['d', 'background-color', '#f2f2f2'],
+		['d', 'padding', '20px'],
+		['d', 'border-radius', '5px'],
+		['d', 'box-shadow', '0 0 10px rgba(0, 0, 0, 0.2)'],
+		['e'],
+
 		['s', '.form-login fieldset'],
-		['d', 'border-color', 'red'],
+		['d', 'border', 'none'],
+		['d', 'padding', 0],
+		['d', 'margin-bottom', '20px'],
+		['e'],
+
+		['s', '.form-login legend'],
+		['d', 'font-weight', 'bold'],
+		['d', 'margin-bottom', '10px'],
+		['e'],
+
+		['s', '.form-login p'],
+		['d', 'margin', 0],
+		['d', 'padding', '10px 0'],
+		['e'],
+
+		['s', '.form-login label'],
+		['d', 'display', 'block'],
+		['d', 'font-weight', 'bold'],
+		['d', 'margin-bottom', '5px'],
+		['e'],
+
+		['s', '.form-login input[type="text"]'],
+		['s', '.form-login input[type="password"]'],
+		['d', 'width', '100%'],
+		['d', 'padding', '8px'],
+		['d', 'border', '1px solid #ccc'],
+		['d', 'border-radius', '3px'],
+		['e'],
+
+		['s', '.form-login button[type="submit"]'],
+		['d', 'width', '100%'],
+		['d', 'padding', '10px'],
+		['d', 'background-color', '#4CAF50'],
+		['d', 'color', '#fff'],
+		['d', 'border', 'none'],
+		['d', 'border-radius', '3px'],
+		['d', 'cursor', 'pointer'],
+		['e'],
+
+		['s', '.form-login button[type="submit"]:hover'],
+		['d', 'background-color', '#45a049'],
 		['e'],
 	);
 
@@ -286,9 +337,7 @@ Returns undef.
 
  # Process login button.
  $obj->process_css;
- $tags->put(['b', 'body']);
  $obj->process;
- $tags->put(['e', 'body']);
 
  # Print out.
  print "CSS\n";
@@ -297,7 +346,78 @@ Returns undef.
  print $tags->flush."\n";
 
  # Output:
- # TODO
+ # CSS
+ # .form-login {
+ # 	width: 300px;
+ # 	background-color: #f2f2f2;
+ # 	padding: 20px;
+ # 	border-radius: 5px;
+ # 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+ # }
+ # .form-login fieldset {
+ # 	border: none;
+ # 	padding: 0;
+ # 	margin-bottom: 20px;
+ # }
+ # .form-login legend {
+ # 	font-weight: bold;
+ # 	margin-bottom: 10px;
+ # }
+ # .form-login p {
+ # 	margin: 0;
+ # 	padding: 10px 0;
+ # }
+ # .form-login label {
+ # 	display: block;
+ # 	font-weight: bold;
+ # 	margin-bottom: 5px;
+ # }
+ # .form-login input[type="text"], .form-login input[type="password"] {
+ # 	width: 100%;
+ # 	padding: 8px;
+ # 	border: 1px solid #ccc;
+ # 	border-radius: 3px;
+ # }
+ # .form-login button[type="submit"] {
+ # 	width: 100%;
+ # 	padding: 10px;
+ # 	background-color: #4CAF50;
+ # 	color: #fff;
+ # 	border: none;
+ # 	border-radius: 3px;
+ # 	cursor: pointer;
+ # }
+ # .form-login button[type="submit"]:hover {
+ # 	background-color: #45a049;
+ # }
+ # 
+ # HTML
+ # <form class="form-login" method="post">
+ #   <fieldset>
+ #     <legend>
+ #       Login
+ #     </legend>
+ #     <p>
+ #       <label for="username">
+ #       </label>
+ #       User name
+ #       <input type="text" name="username" id="username">
+ #       </input>
+ #     </p>
+ #     <p>
+ #       <label for="password">
+ #         Password
+ #       </label>
+ #       <input type="password" name="password" id="password">
+ #       </input>
+ #     </p>
+ #     <p>
+ #       <button type="submit" name="login" value="login">
+ #         Login
+ #       </button>
+ #     </p>
+ #   </fieldset>
+ # </form>
 
 =head1 DEPENDENCIES
 

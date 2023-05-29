@@ -120,7 +120,40 @@ EXAMPLE
      print $tags->flush."\n";
 
      # Output:
-     # TODO
+     # CSS
+     # .form-login {
+     #         width: 300px;
+     # }
+     # 
+     # HTML
+     # <body>
+     #   <form class="form-login" method="post">
+     #     <fieldset>
+     #       <legend>
+     #         Login
+     #       </legend>
+     #       <p>
+     #         <label for="username">
+     #         </label>
+     #         User name
+     #         <input type="text" name="username" id="username">
+     #         </input>
+     #       </p>
+     #       <p>
+     #         <label for="password">
+     #           Password
+     #         </label>
+     #         <input type="password" name="password" id="password">
+     #         </input>
+     #       </p>
+     #       <p>
+     #         <button type="submit" name="login" value="login">
+     #           Login
+     #         </button>
+     #       </p>
+     #     </fieldset>
+     #   </form>
+     # </body>
 
 DEPENDENCIES
     Class::Utils, Error::Pure, List::MoreUtils, Readonly, Tags::HTML.
