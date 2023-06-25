@@ -550,6 +550,10 @@ L<Tags::HTML::Messages>.
 
 Tags helper for login button.
 
+=item L<Tags::HTML::Login::Register>
+
+Tags helper for login register.
+
 =back
 
 =head1 REPOSITORY

@@ -250,6 +250,9 @@ SEE ALSO
     Tags::HTML::Login::Button
         Tags helper for login button.
 
+    Tags::HTML::Login::Register
+        Tags helper for login register.
+
 REPOSITORY
     <https://github.com/michal-josef-spacek/Tags-HTML-Login-Access>
 

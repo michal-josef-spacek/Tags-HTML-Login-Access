@@ -1,4 +1,5 @@
 0.05
+ - Add link for Tags::HTML::Login::Register to doc.
  - Add support of logo.
  - Add tests.
  - Fix api for messages in doc.
