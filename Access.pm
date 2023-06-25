@@ -8,6 +8,7 @@ use Class::Utils qw(set_params split_params);
 use Error::Pure qw(err);
 use List::Util qw(none);
 use Readonly;
+use Tags::HTML::Messages;
 
 Readonly::Array our @FORM_METHODS => qw(post get);
 
@@ -69,13 +70,19 @@ sub new {
 		err "Texts for language '$self->{'lang'}' doesn't exist.";
 	}
 
+	$self->{'_tags_messages'} = Tags::HTML::Messages->new(
+		'css' => $self->{'css'},
+		'flag_no_messages' => 0,
+		'tags' => $self->{'tags'},
+	);
+
 	# Object.
 	return $self;
 }
 
 # Process 'Tags'.
 sub _process {
-	my $self = shift;
+	my ($self, $messages_ar) = @_;
 
 	my $username_id = 'username';
 	my $password_id = 'password';
@@ -132,7 +139,11 @@ sub _process {
 		) : (),
 
 		['e', 'fieldset'],
+	);
 
+	$self->{'_tags_messages'}->process($messages_ar);
+
+	$self->{'tags'}->put(
 		['e', 'form'],
 	);
 
@@ -141,7 +152,7 @@ sub _process {
 
 # Process 'CSS::Struct'.
 sub _process_css {
-	my $self = shift;
+	my ($self, $message_types_hr) = @_;
 
 	$self->{'css'}->put(
 		['s', '.'.$self->{'css_access'}],
@@ -195,7 +206,13 @@ sub _process_css {
 		['s', '.'.$self->{'css_access'}.' button[type="submit"]:hover'],
 		['d', 'background-color', '#45a049'],
 		['e'],
+
+		['s', '.'.$self->{'css_access'}.' .messages'],
+		['d', 'text-align', 'center'],
+		['e'],
 	);
+
+	$self->{'_tags_messages'}->process_css($message_types_hr);
 
 	return;
 }
@@ -479,7 +496,8 @@ L<Class::Utils>,
 L<Error::Pure>,
 L<List::Util>,
 L<Readonly>,
-L<Tags::HTML>.
+L<Tags::HTML>,
+L<Tags::HTML::Messages>.
 
 =head1 SEE ALSO
 
