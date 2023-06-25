@@ -107,6 +107,7 @@ sub _process {
 		['a', 'type', 'text'],
 		['a', 'name', $username_id],
 		['a', 'id', $username_id],
+		['a', 'autofocus', 'autofocus'],
 		['e', 'input'],
 		['e', 'p'],
 
@@ -435,7 +436,7 @@ Returns undef.
  #       <label for="username">
  #       </label>
  #       User name
- #       <input type="text" name="username" id="username">
+ #       <input type="text" name="username" id="username" autofocus="autofocus">
  #       </input>
  #     </p>
  #     <p>
