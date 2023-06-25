@@ -87,7 +87,6 @@ sub _process {
 	my $username_id = 'username';
 	my $password_id = 'password';
 
-	# Main content.
 	$self->{'tags'}->put(
 		['b', 'form'],
 		['a', 'class', $self->{'css_access'}],
