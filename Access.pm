@@ -245,8 +245,8 @@ Tags::HTML::Login::Access - Tags helper for login access.
  use Tags::HTML::Login::Access;
 
  my $obj = Tags::HTML::Login::Access->new(%params);
- $obj->process;
- $obj->process_css;
+ $obj->process($message_ar);
+ $obj->process_css($message_types_hr);
 
 =head1 METHODS
 
@@ -320,17 +320,23 @@ Default value is:
 
 =head2 C<process>
 
- $obj->process;
+ $obj->process($message_ar);
 
 Process Tags structure for login box.
+
+Reference to array with message objects C<$message_ar> must be a instance of
+L<Data::Message::Simple> object.
 
 Returns undef.
 
 =head2 C<process_css>
 
- $obj->process_css;
+ $obj->process_css($message_types_hr);
 
 Process CSS::Struct structure for login box.
+
+Variable C<$message_type_hr> is reference to hash with keys for message type and value for color in CSS style.
+Possible message types are info and error now. Types are defined in L<Data::Message::Simple>.
 
 Returns undef.
 
