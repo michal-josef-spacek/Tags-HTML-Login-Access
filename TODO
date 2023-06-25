@@ -4,7 +4,6 @@ TODO
 2. Link na zapomnel jsem heslo.
 3. Check lang
 4. Rewrite to Tags::HTML::Form
-5. Tests.
 8.
 
 Applied
@@ -13,4 +12,7 @@ Applied
 OK [20230625] skim
 
 7. Add logo image.
+OK [20230625] skim
+
+5. Tests.
 OK [20230625] skim

@@ -1,5 +1,6 @@
 0.05
  - Add support of logo.
+ - Add tests.
  - Fix api for messages in doc.
 
 0.04 2023-06-25T16:02:56+02:00
