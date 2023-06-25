@@ -20,7 +20,8 @@ sub new {
 
 	# Create object.
 	my ($object_params_ar, $other_params_ar) = split_params(
-		['css_access', 'form_method', 'lang', 'register_url', 'text', 'width'], @params);
+		['css_access', 'form_method', 'lang', 'logo_image_url', 'register_url',
+		'text', 'width'], @params);
 	my $self = $class->SUPER::new(@{$other_params_ar});
 
 	# CSS style for access box.
@@ -31,6 +32,9 @@ sub new {
 
 	# Language.
 	$self->{'lang'} = 'eng';
+
+	# Logo.
+	$self->{'logo_image_url'} = undef;
 
 	# Register URL.
 	$self->{'register_url'} = undef;
@@ -96,6 +100,21 @@ sub _process {
 		['b', 'legend'],
 		['d', $self->_text('login')],
 		['e', 'legend'],
+	);
+
+	if (defined $self->{'logo_image_url'}) {
+		$self->{'tags'}->put(
+			['b', 'div'],
+			['a', 'class', 'logo'],
+			['b', 'img'],
+			['a', 'src', $self->{'logo_image_url'}],
+			['a', 'alt', 'logo'],
+			['e', 'img'],
+			['e', 'div'],
+		);
+	}
+
+	$self->{'tags'}->put(
 
 		['b', 'p'],
 		['b', 'label'],
@@ -161,6 +180,18 @@ sub _process_css {
 		['d', 'padding', '20px'],
 		['d', 'border-radius', '5px'],
 		['d', 'box-shadow', '0 0 10px rgba(0, 0, 0, 0.2)'],
+		['e'],
+
+		['s', '.'.$self->{'css_access'}.' .logo'],
+		['d', 'height', '5em'],
+		['d', 'width', '100%'],
+		['e'],
+
+		['s', '.'.$self->{'css_access'}.' img'],
+		['d', 'margin', 'auto'],
+		['d', 'display', 'block'],
+		['d', 'max-width', '100%'],
+		['d', 'max-height', '5em'],
 		['e'],
 
 		['s', '.'.$self->{'css_access'}.' fieldset'],
@@ -284,6 +315,12 @@ Default value is 'post'.
 Language in ISO 639-3 code.
 
 Default value is 'eng'.
+
+=item * C<logo_image_url>
+
+URL to logo image.
+
+Default value is undef.
 
 =item * C<register_url>
 
