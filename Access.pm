@@ -393,7 +393,7 @@ Returns undef.
          From Tags::HTML::process_css():
                  Parameter 'css' isn't defined.
 
-=head1 EXAMPLE
+=head1 EXAMPLE1
 
 =for comment filename=print_block_html_and_css.pl
 

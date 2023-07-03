@@ -116,7 +116,7 @@ ERRORS
              From Tags::HTML::process_css():
                      Parameter 'css' isn't defined.
 
-EXAMPLE
+EXAMPLE1
      use strict;
      use warnings;
 
