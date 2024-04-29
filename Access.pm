@@ -298,7 +298,7 @@ Default value is undef.
 
 =item * C<css_access>
 
-CSS style for access box.
+CSS class for access box.
 
 Default value is 'form-login'.
 
@@ -312,7 +312,7 @@ Default value is 'post'.
 
 =item * C<lang>
 
-Language in ISO 639-3 code.
+Language in ISO 639-2 code.
 
 Default value is 'eng'.
 

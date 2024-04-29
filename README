@@ -24,7 +24,7 @@ METHODS
 
     *       "css_access"
 
-            CSS style for access box.
+            CSS class for access box.
 
             Default value is 'form-login'.
 
@@ -38,7 +38,7 @@ METHODS
 
     *       "lang"
 
-            Language in ISO 639-3 code.
+            Language in ISO 639-2 code.
 
             Default value is 'eng'.
 
