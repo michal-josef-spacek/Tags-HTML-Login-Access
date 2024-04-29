@@ -1,4 +1,5 @@
 0.08
+ - Add required version to List::Util in code.
  - Fix EXAMPLE2 in doc.
  - Fix naming of doc sections.
  - Fix typo in doc.
