@@ -294,7 +294,7 @@ Returns instance of object.
 
 =item * C<css>
 
-'CSS::Struct::Output' object for L<process_css> processing.
+L<CSS::Struct::Output> object for L<process_css> processing.
 
 Default value is undef.
 
@@ -332,7 +332,7 @@ Default value is undef.
 
 =item * C<tags>
 
-'Tags::Output' object.
+L<Tags::Output> object.
 
 Default value is undef.
 
