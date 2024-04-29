@@ -525,6 +525,7 @@ Returns undef.
          'component' => 'Tags::HTML::Container',
          'data' => [sub {
                  my $self = shift;
+                 $login->process_css;
                  $login->process;
                  return;
          }],
