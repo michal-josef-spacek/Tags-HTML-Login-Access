@@ -30,6 +30,7 @@ resources 'homepage' => 'https://github.com/michal-josef-spacek/Tags-HTML-Login-
 resources 'repository' => 'git://github.com/michal-josef-spacek/Tags-HTML-Login-Access';
 test_requires 'CSS::Struct::Output::Structure' => 0;
 test_requires 'Tags::Output::Structure' => 0;
+test_requires 'Test::MockObject' => 0;
 test_requires 'Test::More' => 0;
 test_requires 'Test::NoWarnings' => 0;
 tests_recursive;

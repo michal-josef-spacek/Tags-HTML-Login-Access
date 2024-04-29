@@ -1,5 +1,6 @@
 0.09
  - Remove usage of Tags::Output::Raw and CSS::Struct::Output::Raw.
+ - Use Test::MockObject instance for test of bad instance.
 
 0.08 2024-04-29T13:06:26+02:00
  - Add check for 'lang' parameter.
