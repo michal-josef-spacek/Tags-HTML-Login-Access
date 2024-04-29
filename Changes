@@ -1,4 +1,4 @@
-0.09
+0.09 2024-04-29T13:23:21+02:00
  - Add links to doc.
  - Fix typo in doc.
  - Remove usage of Tags::Output::Raw and CSS::Struct::Output::Raw.
