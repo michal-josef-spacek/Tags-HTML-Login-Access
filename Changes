@@ -1,4 +1,5 @@
 0.09
+ - Fix typo in doc.
  - Remove usage of Tags::Output::Raw and CSS::Struct::Output::Raw.
  - Use Test::MockObject instance for test of bad instance.
 
