@@ -1,4 +1,4 @@
-0.08
+0.08 2024-04-29T13:06:26+02:00
  - Add check for 'lang' parameter.
  - Add required version to List::Util in code.
  - Fix EXAMPLE2 in doc.
