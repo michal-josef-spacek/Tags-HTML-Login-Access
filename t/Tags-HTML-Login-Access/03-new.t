@@ -1,24 +1,24 @@
 use strict;
 use warnings;
 
-use CSS::Struct::Output::Raw;
+use CSS::Struct::Output::Structure;
 use English;
 use Error::Pure::Utils qw(clean);
 use Tags::HTML::Login::Access;
-use Tags::Output::Raw;
+use Tags::Output::Structure;
 use Test::More 'tests' => 11;
 use Test::NoWarnings;
 
 # Test.
 my $obj = Tags::HTML::Login::Access->new(
-	'tags' => Tags::Output::Raw->new,
+	'tags' => Tags::Output::Structure->new,
 );
 isa_ok($obj, 'Tags::HTML::Login::Access');
 
 # Test.
 $obj = Tags::HTML::Login::Access->new(
-	'css' => CSS::Struct::Output::Raw->new,
-	'tags' => Tags::Output::Raw->new,
+	'css' => CSS::Struct::Output::Structure->new,
+	'tags' => Tags::Output::Structure->new,
 );
 isa_ok($obj, 'Tags::HTML::Login::Access');
 
@@ -39,7 +39,7 @@ clean();
 eval {
 	Tags::HTML::Login::Access->new(
 		'tags' => Tags::HTML::Login::Access->new(
-			'tags' => Tags::Output::Raw->new,
+			'tags' => Tags::Output::Structure->new,
 		),
 	);
 };
@@ -53,8 +53,8 @@ clean();
 # Test.
 eval {
 	Tags::HTML::Login::Access->new(
-		'css' => Tags::Output::Raw->new,
-		'tags' => Tags::Output::Raw->new,
+		'css' => Tags::Output::Structure->new,
+		'tags' => Tags::Output::Structure->new,
 	);
 };
 is(
