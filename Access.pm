@@ -526,14 +526,14 @@ Returns undef.
          'tags' => $tags,
          'register_url' => '/register',
  );
- $login->process_css;
  my $app = Plack::App::Tags::HTML->new(
          'component' => 'Tags::HTML::Container',
          'data' => [sub {
-                 my $self = shift;
                  $login->process_css;
                  $login->process;
-                 return;
+         }],
+         'data_prepare' => [sub {
+                 $login->process_css;
          }],
          'css' => $css,
          'tags' => $tags,
