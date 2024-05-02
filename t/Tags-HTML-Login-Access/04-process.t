@@ -348,7 +348,7 @@ is_deeply(
 
 		['e', 'form'],
 	],
-	'Default login form with register url.',
+	'Default login form with logo image.',
 );
 
 # Test.
