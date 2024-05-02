@@ -1,4 +1,5 @@
 0.10
+ - Add 'tags_after' parameter.
  - Fix test message.
  - Improve plack example in doc.
 

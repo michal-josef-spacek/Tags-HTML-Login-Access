@@ -60,6 +60,13 @@ METHODS
 
             Default value is undef.
 
+    *       "tags_after"
+
+            Reference to array with Tags code which will be placed after
+            form.
+
+            Default value is [].
+
     *       "text"
 
             Hash reference with keys defined language in ISO 639-2 code and
@@ -259,8 +266,8 @@ EXAMPLE2
      # Output screenshot is in images/ directory.
 
 DEPENDENCIES
-    Class::Utils, Error::Pure, List::Util, Mo::utils::Language, Readonly,
-    Tags::HTML, Tags::HTML::Messages.
+    Class::Utils, Error::Pure, List::Util, Mo::utils, Mo::utils::Language,
+    Readonly, Tags::HTML, Tags::HTML::Messages.
 
 SEE ALSO
     Tags::HTML::Login::Button
