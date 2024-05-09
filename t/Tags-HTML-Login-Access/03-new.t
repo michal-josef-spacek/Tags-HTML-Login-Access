@@ -7,7 +7,7 @@ use Error::Pure::Utils qw(clean);
 use Tags::HTML::Login::Access;
 use Tags::Output::Structure;
 use Test::MockObject;
-use Test::More 'tests' => 11;
+use Test::More 'tests' => 12;
 use Test::NoWarnings;
 
 # Test.
@@ -71,6 +71,16 @@ eval {
 };
 is($EVAL_ERROR, "Parameter 'form_method' has bad value.\n",
 	"Parameter 'form_method' has bad value.");
+clean();
+
+# Test.
+eval {
+	Tags::HTML::Login::Access->new(
+		'tags_after' => 'bad',
+	);
+};
+is($EVAL_ERROR, "Parameter 'tags_after' must be a array.\n",
+	"Parameter 'tags_after' must be a array.");
 clean();
 
 # Test.
