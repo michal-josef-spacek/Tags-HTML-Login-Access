@@ -130,8 +130,8 @@ sub _process {
 		['b', 'p'],
 		['b', 'label'],
 		['a', 'for', $username_id],
-		['e', 'label'],
 		['d', $self->_text('username_label')],
+		['e', 'label'],
 		['b', 'input'],
 		['a', 'type', 'text'],
 		['a', 'name', $username_id],
@@ -511,8 +511,8 @@ Returns undef.
  #     </legend>
  #     <p>
  #       <label for="username">
+ #         User name
  #       </label>
- #       User name
  #       <input type="text" name="username" id="username" autofocus="autofocus">
  #       </input>
  #     </p>
