@@ -7,7 +7,7 @@ use Error::Pure::Utils qw(clean);
 use Tags::HTML::Login::Access;
 use Tags::Output::Structure;
 use Test::MockObject;
-use Test::More 'tests' => 12;
+use Test::More 'tests' => 15;
 use Test::NoWarnings;
 
 # Test.
@@ -121,4 +121,34 @@ eval {
 };
 is($EVAL_ERROR, "Texts for language 'eng' doesn't exist.\n",
 	"Texts for language 'eng' doesn't exist.");
+clean();
+
+# Test.
+eval {
+	Tags::HTML::Login::Access->new(
+		'width' => 'foo',
+	);
+};
+is($EVAL_ERROR, "Parameter 'width' doesn't contain number.\n",
+	"Parameter 'width' doesn't contain number (foo).");
+clean();
+
+# Test.
+eval {
+	Tags::HTML::Login::Access->new(
+		'width' => '123',
+	);
+};
+is($EVAL_ERROR, "Parameter 'width' doesn't contain unit.\n",
+	"Parameter 'width' doesn't contain unit (123).");
+clean();
+
+# Test.
+eval {
+	Tags::HTML::Login::Access->new(
+		'width' => '123xx',
+	);
+};
+is($EVAL_ERROR, "Parameter 'width' contain bad unit.\n",
+	"Parameter 'width' contain bad unit (123xx).");
 clean();
