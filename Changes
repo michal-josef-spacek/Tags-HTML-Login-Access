@@ -1,4 +1,5 @@
 0.11
+ - Add ERROR to doc for 'tags_after' parameter.
  - Add check for 'width' parameter if it's CSS unit.
  - Fix test dependencies.
 

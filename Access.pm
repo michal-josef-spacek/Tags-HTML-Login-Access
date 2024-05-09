@@ -400,6 +400,10 @@ Returns undef.
  new():
          From Class::Utils::set_params():
                  Unknown parameter '%s'.
+         From Mo::utils::check_array():
+                 Parameter 'tags_after' must be a array.
+                         Value: %s
+                         Reference: %s
          From Mo::utils::CSS::check_css_unit():
                  Parameter 'width' doesn't contain number.
                          Value: %s
