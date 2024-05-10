@@ -6,7 +6,8 @@ TODO
 8. Rewrite to use init().
 9. Improve tags_after to use some Tags::HTML object?
    Include CSS? Or naive way?
-10.
+10. Add check of required texts like in Tags::HTML::ChangePassword.
+11.
 
 Applied
 =======
